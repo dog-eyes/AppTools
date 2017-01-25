@@ -38,5 +38,11 @@
 /** 修改图片尺寸  */
 + (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
 
+/** 存储全局变量 */
++ (void)saveUserDefault:(NSObject*)obj forKey:(NSString*)key;
+/** 获取全局变量 */
++ (NSObject*)loadUserDefault:(NSString*)key;
+/** 判断变量是否存在 */
++ (BOOL)isUserDefaultExist:(NSString*)key;
 
 @end
