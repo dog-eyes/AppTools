@@ -88,6 +88,25 @@
     return newImage;
 }
 
++ (void)saveUserDefault:(NSObject*)obj forKey:(NSString*)key
+{
+    NSUserDefaults *ndf = [NSUserDefaults standardUserDefaults];
+    [ndf setObject: obj forKey: key];
+    [ndf synchronize];
+}
+
++ (NSObject*)loadUserDefault:(NSString*)key
+{
+    NSUserDefaults *ndf = [NSUserDefaults standardUserDefaults];
+    return [ndf objectForKey: key];
+}
+
++ (BOOL)isUserDefaultExist:(NSString*)key
+{
+    NSUserDefaults *ndf = [NSUserDefaults standardUserDefaults];
+    return [ndf objectForKey: key]==nil?NO:YES;
+}
+
 
 
 @end
